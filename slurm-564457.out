@@ -1,0 +1,116 @@
+cuda-12.1 loaded successful
+gcc-12.2.0 loaded successful
+[Warmup Round 0]
+INFO 11-12 09:41:44 llm_engine.py:122] Initializing an LLM engine with config: model='/home/bingxing2/home/scx7kxn/models/llama2-7b', tokenizer='/home/bingxing2/home/scx7kxn/models/llama2-7b', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=int8, device_config=cuda, ifb_config=False, seed=0)
+A matching Triton is not available, some optimizations will not be enabled
+Traceback (most recent call last):
+  File "/home/bingxing2/home/scx7kxn/.conda/envs/QServe/lib/python3.10/site-packages/xformers/__init__.py", line 55, in _is_triton_available
+    from xformers.triton.softmax import softmax as triton_softmax  # noqa
+  File "/home/bingxing2/home/scx7kxn/.conda/envs/QServe/lib/python3.10/site-packages/xformers/triton/softmax.py", line 11, in <module>
+    import triton
+  File "/home/bingxing2/home/scx7kxn/.conda/envs/QServe/lib/python3.10/site-packages/triton/__init__.py", line 12, in <module>
+    from .runtime import (
+  File "/home/bingxing2/home/scx7kxn/.conda/envs/QServe/lib/python3.10/site-packages/triton/runtime/__init__.py", line 1, in <module>
+    from .autotuner import (Autotuner, Config, Heuristics, OutOfResources, autotune,
+  File "/home/bingxing2/home/scx7kxn/.conda/envs/QServe/lib/python3.10/site-packages/triton/runtime/autotuner.py", line 7, in <module>
+    from ..testing import do_bench
+  File "/home/bingxing2/home/scx7kxn/.conda/envs/QServe/lib/python3.10/site-packages/triton/testing.py", line 7, in <module>
+    import triton._C.libtriton.triton as _triton
+ImportError: /home/bingxing2/home/scx7kxn/.conda/envs/QServe/bin/../lib/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /home/bingxing2/home/scx7kxn/.conda/envs/QServe/lib/python3.10/site-packages/triton/_C/libtriton.so)
+[2024-11-12 09:41:52,118] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[INFO] Using w16a16kv4 precision
+INFO 11-12 09:42:44 model_runner.py:338] # GPU blocks: 359, # CPU blocks: 10
+[INFO] USE INT4 w/ ZERO_POINTS for KV CACHE
+Running without ifb mode
+Running with benchmarking mode
+torch.Size([5, 2, 64])
+STAGE:2024-11-12 09:42:51 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:42:51 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:42:51 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:42:59 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:42:59 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:42:59 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:43:07 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:43:07 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:43:07 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:43:16 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:43:16 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:43:16 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:43:24 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:43:24 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:43:24 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:43:33 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:43:33 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:43:33 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:43:42 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:43:42 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:43:42 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:43:51 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:43:51 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:43:51 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+Round 0 Throughput: 296.87471487591455 tokens / second.
+[Warmup Round 1]
+INFO 11-12 09:43:52 llm_engine.py:122] Initializing an LLM engine with config: model='/home/bingxing2/home/scx7kxn/models/llama2-7b', tokenizer='/home/bingxing2/home/scx7kxn/models/llama2-7b', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=int8, device_config=cuda, ifb_config=False, seed=0)
+[INFO] Using w16a16kv4 precision
+INFO 11-12 09:44:34 model_runner.py:338] # GPU blocks: 357, # CPU blocks: 10
+[INFO] USE INT4 w/ ZERO_POINTS for KV CACHE
+Running without ifb mode
+Running with benchmarking mode
+torch.Size([5, 2, 64])
+STAGE:2024-11-12 09:44:41 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:44:41 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:44:41 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:44:49 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:44:49 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:44:49 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:44:57 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:44:57 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:44:57 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:45:05 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:45:05 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:45:05 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:45:14 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:45:14 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:45:14 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:45:22 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:45:22 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:45:22 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:45:31 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:45:31 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:45:31 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:45:40 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:45:40 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:45:40 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+Round 1 Throughput: 300.520645472549 tokens / second.
+INFO 11-12 09:45:41 llm_engine.py:122] Initializing an LLM engine with config: model='/home/bingxing2/home/scx7kxn/models/llama2-7b', tokenizer='/home/bingxing2/home/scx7kxn/models/llama2-7b', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=int8, device_config=cuda, ifb_config=False, seed=0)
+[INFO] Using w16a16kv4 precision
+INFO 11-12 09:46:24 model_runner.py:338] # GPU blocks: 357, # CPU blocks: 10
+[INFO] USE INT4 w/ ZERO_POINTS for KV CACHE
+Running without ifb mode
+Running with benchmarking mode
+torch.Size([5, 2, 64])
+STAGE:2024-11-12 09:46:30 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:46:30 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:46:30 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:46:38 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:46:38 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:46:38 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:46:46 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:46:46 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:46:46 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:46:55 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:46:55 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:46:55 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:47:03 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:47:03 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:47:03 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:47:12 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:47:12 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:47:12 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:47:21 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:47:21 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:47:21 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+STAGE:2024-11-12 09:47:30 2576920:2576920 ActivityProfilerController.cpp:314] Completed Stage: Warm Up
+STAGE:2024-11-12 09:47:30 2576920:2576920 ActivityProfilerController.cpp:320] Completed Stage: Collection
+STAGE:2024-11-12 09:47:30 2576920:2576920 ActivityProfilerController.cpp:324] Completed Stage: Post Processing
+Round 2 Throughput: 300.5994290990775 tokens / second.

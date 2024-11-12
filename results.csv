@@ -1,0 +1,71 @@
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=512, Output=4096
+Round 0 Throughput: 251.45367083605421 tokens / second.
+Round 1 Throughput: 256.3259923290431 tokens / second.
+Round 2 Throughput: 256.30574076343277 tokens / second.
+==================================================
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=512, Output=4096
+Round 0 Throughput: 252.36332130904026 tokens / second.
+Round 1 Throughput: 257.13276736952554 tokens / second.
+Round 2 Throughput: 257.08840915713387 tokens / second.
+==================================================
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=512, Output=4096
+Round 0 Throughput: 241.57304656472638 tokens / second.
+Round 1 Throughput: 246.56726025208516 tokens / second.
+Round 2 Throughput: 247.34985748785533 tokens / second.
+==================================================
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=512, Output=4096
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=512, Output=4096
+Round 0 Throughput: 243.4308668537863 tokens / second.
+Round 1 Throughput: 247.28395526933124 tokens / second.
+Round 2 Throughput: 250.11585229563752 tokens / second.
+==================================================
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=128, Output=3968
+Round 0 Throughput: 284.2966630503608 tokens / second.
+Round 1 Throughput: 286.4119515412336 tokens / second.
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=128, Output=3968
+Round 0 Throughput: 301.0690935497332 tokens / second.
+Round 1 Throughput: 305.6824548949631 tokens / second.
+Round 2 Throughput: 303.1848927216862 tokens / second.
+==================================================
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=128, Output=3968
+Round 0 Throughput: 562.6982329863213 tokens / second.
+Round 1 Throughput: 571.8011301825903 tokens / second.
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=128, Output=3968
+Round 0 Throughput: 568.91320319705 tokens / second.
+Round 1 Throughput: 566.7071909737629 tokens / second.
+Round 2 Throughput: 570.1271017197994 tokens / second.
+==================================================
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=12, Input=128, Output=3968
+Round 0 Throughput: 202.28446719049765 tokens / second.
+Round 1 Throughput: 180.66519779900506 tokens / second.
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=10, Input=128, Output=3968
+Round 0 Throughput: 298.79070328976337 tokens / second.
+Round 1 Throughput: 304.7444050931927 tokens / second.
+Round 2 Throughput: 303.6440702484926 tokens / second.
+==================================================
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-13b: Batch=8, Input=128, Output=3968
+Round 0 Throughput: 458.7596070938818 tokens / second.
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-13b: Batch=8, Input=128, Output=3968
+Round 0 Throughput: 473.7124777012416 tokens / second.
+Round 1 Throughput: 483.7860677944805 tokens / second.
+Round 2 Throughput: 482.4748697806192 tokens / second.
+==================================================
+==================================================
+/home/bingxing2/home/scx7kxn/models/llama2-7b: Batch=10, Input=128, Output=3968
+Round 0 Throughput: 296.87471487591455 tokens / second.
+Round 1 Throughput: 300.520645472549 tokens / second.
+Round 2 Throughput: 300.5994290990775 tokens / second.
+==================================================
