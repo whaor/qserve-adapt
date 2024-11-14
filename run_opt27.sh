@@ -9,6 +9,7 @@ export PYTHONUNBUFFERED=1
 export MODEL_PATH=/home/bingxing2/home/scx7kxn/models/opt-2.7b
 
 
+export NUM_GPU_PAGE_BLOCKS=1280
 export GLOBAL_BATCH_SIZE=32
 export PROMPT_LEN=128
 export GENERATION_LEN=1920

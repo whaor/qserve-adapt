@@ -683,6 +683,8 @@ class ModelRunner:
             max_block_table_len,
             layer_kv_scales=layer_kv_scales,
         )
+
+        # print(f"from model_runner input_tokens size: {input_tokens.size()}")
         model = self.model
         output = model(input_tokens, input_metadata)
         

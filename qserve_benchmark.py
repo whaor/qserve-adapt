@@ -42,6 +42,8 @@ def process_requests(
         init_num_blocks = (tot_length + block_size - 1) // block_size
         engine.update_init_num_blocks(init_num_blocks)
 
+
+
     # seq_group_metadata_list, scheduler_outputs = engine.step()
     iter = 1
 
@@ -53,11 +55,12 @@ def process_requests(
     while engine.has_unfinished_requests():
         ### Schedule iteration 1 (context stage)
         if (iter + prompt_len) % 512 == 0:
+            print(f"profiling with kv length: {iter + prompt_len}")
             with torch.profiler.profile(
                 activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA],
             ) as prof:
                 requests_outputs = engine.step()
-            tracename = "/home/bingxing2/home/scx7kxn/qserve/traces/llama7_" + engine.precision + "_bsz" + str(batch_size) + "_kv" + str(iter + prompt_len) + ".json"
+            tracename = "/home/bingxing2/home/scx7kxn/qserve/traces/llama13_" + engine.precision + "_bsz" + str(batch_size) + "_kv" + str(iter + prompt_len) + ".json"
             prof.export_chrome_trace(tracename)
         else:
             requests_outputs = engine.step()
@@ -87,7 +90,7 @@ def main(args: argparse.Namespace):
     batch_size = int(os.environ.get("GLOBAL_BATCH_SIZE"))
     prompt_len = int(os.environ.get("PROMPT_LEN"))
     generation_len = int(os.environ.get("GENERATION_LEN"))
-    rounds = 3
+    rounds = 2
 
     with open("results.csv", "a") as file:
         print("=" * 50, file=file)
@@ -100,6 +103,8 @@ def main(args: argparse.Namespace):
         for rnd in range(rounds):
             if rnd < rounds - 1:
                 print("[Warmup Round %d]" % rnd)
+            
+            args.enforce_eager = False # using CUDA graph
             engine = initialize_engine(args)
             engine.profiling_mode = True
             # warm up

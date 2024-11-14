@@ -579,6 +579,7 @@ class LLMEngine:
         # (i.e. benchmarking mode)
         # 2. no_ifb basically does not check stop and return output tokens in the end of model
         # execution.
+        
         if self.ifb_mode:
             (
                 self.seq_group_metadata_list,
@@ -610,14 +611,20 @@ class LLMEngine:
                     self.seq_group_metadata_list,
                     self.scheduler_outputs,
                 ) = self.scheduler.schedule()
+                
+                
                 self._run_workers(
                     "init_block_tables",
                     seq_group_metadata_list=self.seq_group_metadata_list,
                     sliding_window=None,
                 )
+
+
                 self.block_table_initialized = True
             else:
                 self.seq_group_metadata_list[0].is_prompt = False
+            
+            
             all_outputs = self._run_workers(
                 "execute_model",
                 seq_group_metadata_list=self.seq_group_metadata_list,

@@ -9,7 +9,8 @@ export PYTHONUNBUFFERED=1
 export MODEL_PATH=/home/bingxing2/home/scx7kxn/models/llama2-13b
 
 
-export GLOBAL_BATCH_SIZE=8
+export NUM_GPU_PAGE_BLOCKS=1280
+export GLOBAL_BATCH_SIZE=10
 export PROMPT_LEN=128
 export GENERATION_LEN=3968
 python qserve_benchmark.py \

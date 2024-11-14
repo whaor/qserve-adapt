@@ -155,9 +155,8 @@ class LlamaAttention(nn.Module):
         hidden_states,
         input_metadata: InputMetadata,
     ):
+        # print(f"hiddenstates: {hidden_states.size()}, weight: {self.qkv_proj.weight.size()}")
         qkv = self.qkv_proj(hidden_states)
-        # print(f"act dtype: {hidden_states.dtype}, weight dtype: {self.qkv_proj.weight.dtype}")
-        
         # qkv = qkv.half()
         if input_metadata.is_prompt:
             # Note: the conversion of kv_scale_orig_quant is currently important
